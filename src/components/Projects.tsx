@@ -8,7 +8,7 @@ export default function Projects() {
       description:
         "cliMate is a weather app that provides weather information, based on the location passed in by the user.",
       tech: ["Typescript", "Next.js", "Tailwind"],
-      link: "https://climate-omega-blue.vercel.app",
+      link: "https://cli-mate-gamma.vercel.app",
     },
     {
       title: "nextUp",
