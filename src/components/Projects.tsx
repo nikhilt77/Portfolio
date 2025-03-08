@@ -34,7 +34,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="bg-black min-h-screen flex flex-col p-8">
+    <div className="bg-black min-h-screen flex flex-col p-8 mb-12">
       <h1 className="text-red-600 font-extrabold text-4xl mb-8 mt-10">
         Projects
       </h1>

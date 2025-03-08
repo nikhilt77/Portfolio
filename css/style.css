@@ -1,0 +1,13 @@
+// ...existing code...
+
+/* Add smooth scrolling to the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* For Safari compatibility (which doesn't support scroll-behavior) */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
