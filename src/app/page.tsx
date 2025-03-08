@@ -78,7 +78,7 @@ export default function Home() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleMobileNavigation = (sectionId) => {
+  const handleMobileNavigation = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
