@@ -1,5 +1,5 @@
 # Next.js build output
-.next/
+.next
 next-env.d.ts
 
 # dependencies
