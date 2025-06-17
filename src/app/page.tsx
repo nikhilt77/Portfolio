@@ -8,6 +8,7 @@ import Projects from "../components/Projects";
 import Profiles from "../components/Profiles";
 import Contact from "../components/Contact";
 import Resume from "../components/Resume";
+import { initAnimations, addHoverAnimations } from "../utils/animations";
 
 export default function Home() {
   const [isDashboardVisible, setDashboardVisible] = useState(false);
@@ -34,6 +35,24 @@ export default function Home() {
 
     checkViewportSize();
     window.addEventListener('resize', checkViewportSize);
+
+    const initAnimationsWithFallback = () => {
+      try {
+        initAnimations();
+        addHoverAnimations();
+      } catch (error) {
+        const elements = document.querySelectorAll('.hero-title, .hero-subtitle, .hero-icons, .animate-section, .animate-card, .animate-text, .animate-button, .animate-nav');
+        elements.forEach(el => {
+          (el as HTMLElement).style.opacity = '1';
+        });
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAnimationsWithFallback);
+    } else {
+      setTimeout(initAnimationsWithFallback, 100);
+    }
 
     return () => {
       window.removeEventListener('resize', checkViewportSize);
@@ -92,7 +111,7 @@ export default function Home() {
     <div className="bg-black cursor-default min-h-screen relative">
       <button
         onClick={toggleDashboard}
-        className={`fixed top-8 left-8 bg-red-900 text-white p-3 rounded-full z-50 transition-all duration-300 hover:bg-red-800 md:block hidden ${
+        className={`animate-button hover-scale fixed top-8 left-8 bg-red-900 text-white p-3 rounded-full z-50 transition-all duration-300 hover:bg-red-800 md:block hidden ${
           isDashboardVisible ? "translate-x-56" : "translate-x-0"
         }`}
       >
@@ -101,7 +120,7 @@ export default function Home() {
 
       <button
         onClick={toggleMobileMenu}
-        className="fixed top-6 right-6 bg-red-900 text-white p-3 rounded-full z-50 md:hidden block hover:bg-red-800"
+        className="animate-button hover-scale fixed top-6 right-6 bg-red-900 text-white p-3 rounded-full z-50 md:hidden block hover:bg-red-800"
       >
         {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
       </button>
@@ -124,7 +143,7 @@ export default function Home() {
       )}
 
       {isDashboardVisible && !isMobileView && (
-        <div className="fixed top-0 left-0 h-full">
+        <div className="animate-nav fixed top-0 left-0 h-full">
           <Sidebar activeSection={activeSection} />
         </div>
       )}
@@ -138,23 +157,23 @@ export default function Home() {
           <Landing />
         </section>
 
-        <section id="about" ref={sectionRefs.about} className="min-h-screen">
+        <section id="about" ref={sectionRefs.about} className="animate-section min-h-screen">
           <About />
         </section>
 
-        <section id="projects" ref={sectionRefs.projects} className="min-h-screen">
+        <section id="projects" ref={sectionRefs.projects} className="animate-section min-h-screen">
           <Projects />
         </section>
         
-        <section id="resume" ref={sectionRefs.resume} className="min-h-screen">
+        <section id="resume" ref={sectionRefs.resume} className="animate-section min-h-screen">
           <Resume />
         </section>
         
-        <section id="contact" ref={sectionRefs.contact} className="min-h-screen">
+        <section id="contact" ref={sectionRefs.contact} className="animate-section min-h-screen">
           <Contact />
         </section>
         
-        <section id="profiles" ref={sectionRefs.profiles} className="min-h-screen">
+        <section id="profiles" ref={sectionRefs.profiles} className="animate-section min-h-screen">
           <Profiles />
         </section>
       </main>

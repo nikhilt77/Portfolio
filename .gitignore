@@ -35,3 +35,22 @@ yarn-error.log*
 
 # typescript
 tsconfig.tsbuildinfo
+
+# Documentation and guides
+ANIMATION_GUIDE.md
+README.md
+
+# Temporary files
+*.tmp
+*.temp
+h.txt
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+.DS_Store

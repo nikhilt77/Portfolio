@@ -5,17 +5,17 @@ export default function About() {
   return (
     <div className="min-h-screen p-8 text-white">
       <div className="max-w-3xl mx-2">
-        <h1 className="text-4xl font-bold mb-6 text-red-600">About Me</h1>
+        <h1 className="animate-text text-4xl font-bold mb-6 text-red-600">About Me</h1>
 
         <div className="space-y-6 text-gray-300">
-          <p className="text-lg">
+          <p className="animate-text text-lg">
             Hello! I'm Nikhil, a passionate software developer with a keen
             interest in building stuff :). My journey in technology started with
             curiosity and has evolved into a professional pursuit of building
             new and innovative projects.
           </p>
 
-          <div className="bg-gray-800 bg-opacity-30 p-6 rounded-lg">
+          <div className="animate-card hover-lift bg-gray-800 bg-opacity-30 p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-4 text-white">Skills</h2>
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -39,7 +39,7 @@ export default function About() {
             </div>
           </div>
 
-          <div>
+          <div className="animate-card">
             <h2 className="text-xl font-semibold mb-4 text-white">Education</h2>
             <p className="mb-2">
               Bachelor of Technology in Computer Science
@@ -51,7 +51,7 @@ export default function About() {
             </p>
           </div>
 
-          <div>
+          <div className="animate-card">
             <h2 className="text-xl font-semibold mb-4 text-white">What I Do</h2>
             <p className="mb-4">
               I specialize in building responsive and user-friendly web
@@ -61,7 +61,7 @@ export default function About() {
             </p>
           </div>
 
-          <div>
+          <div className="animate-card">
             <h2 className="text-xl font-semibold mb-4 text-white">Interests</h2>
             <p>
               Beyond coding, I enjoy exploring new technologies, contributing to

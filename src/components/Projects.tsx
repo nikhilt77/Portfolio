@@ -35,7 +35,7 @@ export default function Projects() {
 
   return (
     <div className="bg-black min-h-screen flex flex-col p-8 mb-12">
-      <h1 className="text-red-600 font-extrabold text-4xl mb-8 mt-10">
+      <h1 className="animate-text text-red-600 font-extrabold text-4xl mb-8 mt-10">
         Projects
       </h1>
 
@@ -43,7 +43,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border-2 border-red-900 rounded-lg p-6
+            className="animate-card hover-lift border-2 border-red-900 rounded-lg p-6
                      hover:border-red-600 transition-all
                      bg-gray-900 bg-opacity-40 backdrop-blur-sm
                      transform hover:scale-[1.02]"
@@ -69,7 +69,7 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-red-600 hover:text-red-400 transition-colors inline-flex items-center"
+              className="hover-scale text-red-600 hover:text-red-400 transition-colors inline-flex items-center"
             >
               View Project →
             </a>

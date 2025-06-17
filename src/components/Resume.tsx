@@ -17,8 +17,8 @@ const Resume = () => {
             Download my resume or view it online below.
           </p>
           <a 
-            href="/nikhilResume.pdf" 
-            download="NikhilTomy_Resume.pdf"
+            href="/Nikhil_Tomy_Resume-2.pdf" 
+            download="Nikhil_Tomy_Resume.pdf"
             className="inline-block bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition-colors mt-4"
           >
             Download PDF
@@ -28,7 +28,7 @@ const Resume = () => {
         <div className="flex justify-center mt-10">
           <div className="resume-container w-full max-w-4xl bg-gray-900 p-6 rounded-lg shadow-xl">
             <iframe 
-              src="/nikhilResume.pdf" 
+              src="/Nikhil_Tomy_Resume-2.pdf" 
               className="w-full h-[600px] rounded-md border-none"
               title="Resume PDF"
             ></iframe>
