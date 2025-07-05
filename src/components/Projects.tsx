@@ -2,19 +2,26 @@
 import React from "react";
 
 export default function Projects() {
-  const projects = [
+   const projects = [
+    {
+      title: "Quizzero",
+      description:
+        "Quizzero is a quiz web application that allows users to take quizzes on various topics. It provides a user-friendly interface and tracks user scores.",
+      tech: ["Next.js", "Web Scraping", "Tailwind CSS"],
+      link: "https://quizzero.vercel.app",
+    },
     {
       title: "cliMate",
       description:
         "cliMate is a weather app that provides weather information, based on the location passed in by the user.",
-      tech: ["Typescript", "Next.js", "Tailwind"],
+      tech: ["Typescript", "Next.js", "Tailwind CSS"],
       link: "https://cli-mate-gamma.vercel.app",
     },
     {
-      title: "nextUp",
+      title: "WhatNext",
       description:
-        "nextUp is a basic to-do web application that allows users to add,update and delete tasks and keep track of their daily activities.",
-      tech: ["HTML", "CSS", "Javascript"],
+        "WhatNext is a to-do list web application that helps users manage their tasks efficiently. It allows users to add, edit, and delete tasks.",
+      tech: ["Spring Boot", "Tailwind CSS", "Next.js","PostgreSQL"],
       link: "https://nextup-eight.vercel.app",
     },
     {
@@ -31,6 +38,14 @@ export default function Projects() {
       tech: ["Node.js", "PostgreSQL"],
       link: "https://github.com/nikhilt77/Students",
     },
+    {
+      title: "Prioriti",
+      description:
+        "A study planner web application that helps students manage their study schedules based on their curriculum. It provides a user-friendly interface to track progress and set priorities.",
+      tech: ["Next.js","Node.js"],
+      link: "https://github.com/nikhilt77/prioriti",
+    }
+
   ];
 
   return (
