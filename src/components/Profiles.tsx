@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 export default function Profiles() {
   const profiles = [
@@ -20,6 +21,12 @@ export default function Profiles() {
       name: "Instagram",
       link: "https://www.instagram.com/nikhil._.t77/",
       color: "hover:text-red-400",
+    },
+    {
+      icon: <SiLeetcode className="text-3xl" />,
+      name: "LeetCode",
+      link: "https://leetcode.com/nikhilt77/",
+      color: "hover:text-yellow-400",
     },
   ];
 
