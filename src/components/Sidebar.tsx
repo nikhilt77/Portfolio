@@ -24,8 +24,10 @@ export default function Sidebar({ activeSection }: SidebarProps) {
           <li
             key={item.id}
             className={`bg-gray-800 ${
-              activeSection === item.id ? "bg-opacity-50" : "bg-opacity-30"
-            } p-8 rounded-lg hover:bg-opacity-50 transition-all`}
+              activeSection === item.id ? "bg-opacity-50 scale-105 shadow-xl shadow-red-500/20" : "bg-opacity-30"
+            } p-8 rounded-lg transition-all duration-300 ease-in-out
+            hover:scale-105 hover:shadow-xl hover:shadow-red-500/20 hover:bg-opacity-50
+            transform cursor-pointer`}
           >
             <a 
               href={`#${item.id}`} 
