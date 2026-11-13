@@ -1,11 +1,5 @@
 "use client";
 import React from 'react';
-import dynamic from 'next/dynamic';
-
-const PDFViewer = dynamic(
-  () => import('./PDFViewer'),
-  { ssr: false }
-);
 
 const Resume = () => {
   return (
@@ -17,8 +11,8 @@ const Resume = () => {
             Download my resume or view it online below.
           </p>
           <a 
-            href="/NIKHIL TOMY-Resume.pdf" 
-            download="NIKHIL TOMY-Resume.pdf"
+            href="/nikhil-tomy-resume.pdf" 
+            download="nikhil-tomy-resume.pdf"
             className="inline-block bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition-colors mt-4"
           >
             Download PDF
@@ -28,9 +22,10 @@ const Resume = () => {
         <div className="flex justify-center mt-10">
           <div className="resume-container w-full max-w-4xl bg-gray-900 p-6 rounded-lg shadow-xl">
             <iframe 
-              src="/NIKHIL TOMY-Resume.pdf" 
+              src="/nikhil-tomy-resume.pdf" 
               className="w-full h-[600px] rounded-md border-none"
-              title="NIKHIL TOMY-Resume.pdf"
+              title="Nikhil Tomy Resume"
+              loading="lazy"
             ></iframe>
           </div>
         </div>

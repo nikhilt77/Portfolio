@@ -1,11 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { FaChevronRight, FaChevronLeft, FaBars, FaTimes } from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft, FaBars, FaTimes, FaArrowUp } from "react-icons/fa";
 import Sidebar from "../components/Sidebar";
 import Landing from "../components/Landing";
 import About from "../components/About";
 import Projects from "../components/Projects";
-import Profiles from "../components/Profiles";
 import Contact from "../components/Contact";
 import Resume from "../components/Resume";
 
@@ -14,12 +13,12 @@ export default function Home() {
   const [isMobileView, setIsMobileView] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("landing");
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const sectionRefs = {
     landing: useRef(null),
     about: useRef(null),
     projects: useRef(null),
-    profiles: useRef(null),
     resume: useRef(null),
     contact: useRef(null),
   };
@@ -44,7 +43,7 @@ export default function Home() {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5,
+      threshold: 0.3,
     };
 
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
@@ -78,6 +77,12 @@ export default function Home() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => setShowScrollTop(window.scrollY > 500);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleMobileNavigation = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -86,7 +91,7 @@ export default function Home() {
     }
   };
 
-  const sections = ['landing', 'about', 'projects', 'resume', 'contact', 'profiles'];
+  const sections = ['landing', 'about', 'projects', 'resume', 'contact'];
 
   return (
     <div className="bg-black cursor-default min-h-screen relative">
@@ -116,7 +121,7 @@ export default function Home() {
                 className={`py-4 text-xl capitalize cursor-pointer transition-colors
                   ${activeSection === section ? 'text-red-500 font-bold' : 'text-white hover:text-red-500'}`}
               >
-                {section}
+                {section.charAt(0).toUpperCase() + section.slice(1)}
               </div>
             ))}
           </nav>
@@ -138,11 +143,11 @@ export default function Home() {
           <Landing />
         </section>
 
-        <section id="about" ref={sectionRefs.about} className="min-h-screen">
+        <section id="about" ref={sectionRefs.about}>
           <About />
         </section>
 
-        <section id="projects" ref={sectionRefs.projects} className="min-h-screen">
+        <section id="projects" ref={sectionRefs.projects}>
           <Projects />
         </section>
         
@@ -150,14 +155,20 @@ export default function Home() {
           <Resume />
         </section>
         
-        <section id="contact" ref={sectionRefs.contact} className="min-h-screen">
+        <section id="contact" ref={sectionRefs.contact}>
           <Contact />
         </section>
-        
-        <section id="profiles" ref={sectionRefs.profiles} className="min-h-screen">
-          <Profiles />
-        </section>
       </main>
+
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-8 right-8 bg-red-700 hover:bg-red-600 text-white p-3 rounded-full z-50 transition-all duration-300 shadow-lg"
+          aria-label="Scroll to top"
+        >
+          <FaArrowUp />
+        </button>
+      )}
     </div>
   );
 }

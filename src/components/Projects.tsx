@@ -4,6 +4,13 @@ import React from "react";
 export default function Projects() {
    const projects = [
     {
+      title: "MediLedger",
+      description:
+        "A blockchain-based Electronic Health Record (EHR) system designed to securely store and manage patient medical records with decentralized access control.",
+      tech: ["Blockchain", "Java", "Distributed Systems"],
+      link: "https://github.com/Medi-Ledger-FP/MediLedger",
+    },
+    {
       title: "Quizzero",
       description:
         "Quizzero is a quiz web application that allows users to take quizzes on various topics. It provides a user-friendly interface and tracks user scores.",
@@ -49,8 +56,8 @@ export default function Projects() {
   ];
 
   return (
-    <div className="bg-black min-h-screen flex flex-col p-8 mb-12">
-      <h1 className="text-red-600 font-extrabold text-4xl mb-8 mt-10">
+    <div className="bg-black py-20 px-8">
+      <h1 className="text-red-600 font-extrabold text-4xl mb-8">
         Projects
       </h1>
 
@@ -58,22 +65,22 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border-2 border-red-900 rounded-lg p-6
+            className="border-2 border-red-900 rounded-lg p-5
                      hover:border-red-600 transition-all
                      bg-gray-900 bg-opacity-40 backdrop-blur-sm
-                     transform hover:scale-[1.02]"
+                     transform hover:scale-[1.02] flex flex-col"
           >
-            <h2 className="text-red-900 font-bold text-2xl mb-3">
+            <h2 className="text-red-500 font-bold text-xl mb-2">
               {project.title}
             </h2>
 
-            <p className="text-gray-300 text-lg mb-4">{project.description}</p>
+            <p className="text-gray-300 text-sm mb-4 flex-grow">{project.description}</p>
 
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tech.map((tech, techIndex) => (
                 <span
                   key={techIndex}
-                  className="bg-red-900 bg-opacity-50 px-3 py-1 rounded-full text-sm text-white"
+                  className="bg-red-900 bg-opacity-50 px-2.5 py-0.5 rounded-full text-xs text-white"
                 >
                   {tech}
                 </span>
@@ -84,7 +91,7 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-red-600 hover:text-red-400 transition-colors inline-flex items-center"
+              className="text-red-600 hover:text-red-400 transition-colors inline-flex items-center text-sm"
             >
               View Project →
             </a>

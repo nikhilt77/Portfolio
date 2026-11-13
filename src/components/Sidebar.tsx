@@ -12,28 +12,25 @@ export default function Sidebar({ activeSection }: SidebarProps) {
     { id: "projects", label: "Projects" },
     { id: "resume", label: "Resume" },
     { id: "contact", label: "Contact" },
-    { id: "profiles", label: "Profiles" },
   ];
 
   return (
     <div className="bg-auto w-64 absolute top-20 left-12 flex flex-col items-center min-h-screen">
-      <h1 className="text-white font-extrabold text-3xl mb-8">Sidebar</h1>
+      <h1 className="text-white font-extrabold text-3xl mb-8">Nikhil Tomy</h1>
 
       <ul className="flex flex-col space-y-4 w-full text-white text-xl">
         {navigationItems.map((item) => (
           <li
             key={item.id}
-            className={`bg-gray-800 ${
-              activeSection === item.id ? "bg-opacity-50 scale-105 shadow-xl shadow-red-500/20" : "bg-opacity-30"
-            } p-8 rounded-lg transition-all duration-300 ease-in-out
+            className={`bg-gray-800 ${activeSection === item.id ? "bg-opacity-50 scale-105 shadow-xl shadow-red-500/20" : "bg-opacity-30"
+              } p-8 rounded-lg transition-all duration-300 ease-in-out
             hover:scale-105 hover:shadow-xl hover:shadow-red-500/20 hover:bg-opacity-50
             transform cursor-pointer`}
           >
-            <a 
-              href={`#${item.id}`} 
-              className={`block ${
-                activeSection === item.id ? "text-red-500" : "hover:text-red-500"
-              }`}
+            <a
+              href={`#${item.id}`}
+              className={`block ${activeSection === item.id ? "text-red-500" : "hover:text-red-500"
+                }`}
             >
               {item.label}
             </a>
